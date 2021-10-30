@@ -16,8 +16,8 @@
   class cs_checkout_shipping_checkout_step {
     public string $code;
     public string $group;
-    public string $title;
-    public string $description;
+    public $title;
+    public $description;
     public ?int $sort_order = 0;
     public bool $enabled = false;
 
@@ -38,7 +38,7 @@
 
       $CLICSHOPPING_Template = Registry::get('Template');
 
-      if (isset($_GET['Checkout']) && isset($_GET['Shipping'])) {
+      if (isset($_GET['Checkout'], $_GET['Shipping'])) {
 
         $content_width = (int)MODULE_CHECKOUT_SHIPPING_CHECKOUT_STEP_CONTENT_WIDTH;
 
